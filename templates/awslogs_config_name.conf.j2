@@ -1,0 +1,36 @@
+{% for log in awslogs_config_settings %}
+[{{ log.file }}]
+log_group_name = {{ log.group_name }}
+log_stream_name = {{ log.stream_name | default('{hostname}') }}
+{% if log.datetime_format is defined %}
+datetime_format = {{ log.datetime_format }}
+{% endif %}
+file = {{ log.file }}
+{% if log.time_zone is defined %}
+time_zone = {{ log.time_zone }}
+{% endif %}
+{% if log.file_fingerprint_lines is defined %}
+file_fingerprint_lines = {{ log.file_fingerprint_lines }}
+{% endif %}
+{% if log.multi_line_start_pattern is defined %}
+multi_line_start_pattern = {{ log.multi_line_start_pattern }}
+{% endif %}
+{% if log.initial_position is defined %}
+initial_position = {{ log.initial_position }}
+{% endif %}
+{% if log.encoding is defined %}
+encoding = {{ log.encoding }}
+{% endif %}
+{% if log.buffer_duration is defined %}
+buffer_duration = {{ log.buffer_duration }}
+{% endif %}
+{% if log.batch_count is defined %}
+batch_count = {{ log.batch_count }}
+{% endif %}
+{% if log.batch_size is defined %}
+batch_size = {{ log.batch_size }}
+{% endif %}
+{% if not loop.last %}
+
+{% endif %}
+{% endfor %}

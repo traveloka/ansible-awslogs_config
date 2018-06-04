@@ -1,0 +1,11 @@
+---
+- hosts: all
+  roles:
+    - role: ansible-apt_sources_list
+    - role: ansible-awslogs_config
+      awslogs_config_name: "syslog"
+      awslogs_config_settings:
+        - file: "/var/log/syslog"
+          datetime_format: "%b %d %H:%M:%S"
+          group_name: "syslog.log"
+          time_zone: "UTC"

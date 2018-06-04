@@ -1,0 +1,12 @@
+---
+- name: ansible-apt_sources_list
+  src: https://github.com/traveloka/ansible-apt_sources_list
+  scm: git
+  version: v1.1.0
+- name: ansible-awslogs
+  src: https://github.com/traveloka/ansible-awslogs
+  scm: git
+- name: ansible-pip
+  src: https://github.com/traveloka/ansible-pip
+  scm: git
+  version: v1.0.0

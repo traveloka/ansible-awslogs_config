@@ -1,0 +1,13 @@
+---
+- name: "copy {{ awslogs_config_name }} configuration"
+  become: yes
+  become_method: sudo
+  template:
+    dest: "{{ awslogs_agent_conf_dir }}/{{awslogs_config_name}}.conf"
+    src: awslogs_config_name.conf.j2
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart awslogs
+  tags:
+    - awslogs_config

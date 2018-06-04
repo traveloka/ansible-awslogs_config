@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  description: generic configuration for streamin logs to CloudWatch Logs
+  company: Traveloka
+  min_ansible_version: 2.0
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+    - xenial
+  categories:
+  - cloud
+  - cloud:ec2
+  - system
+dependencies:
+  - ansible-awslogs
